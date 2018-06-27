@@ -58,26 +58,23 @@ class Controller {
     })
   }
 //
-//   static createContactGroup(contactId, groupId) {
-//     contactGroup.create(contactId, groupId, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully created data");
-//     });
-//   }
-//
-//   static updateContactGroup(id, columnName, value) {
-//     contactGroup.update(id, columnName, value, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully updated data");
-//     });
-//   }
-//
-//   static deleteContactGroup(id) {
-//     contactGroup.delete(id, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully deleted data");
-//     });
-//   }
+  static createContactGroup(contactId, groupId) {
+    contactGroup.create(contactId, groupId).then(() => {
+      view.showMessage("Successfully created data");
+    })
+  }
+
+  static updateContactGroup(id, columnName, value) {
+    contactGroup.update(id, columnName, value).then(() => {
+      view.showMessage("Successfully updated data");
+    });
+  }
+
+  static deleteContactGroup(id) {
+    contactGroup.delete(id).then(() => {
+      view.showMessage("Successfully deleted data");
+    })
+  }
 }
 
 module.exports = Controller;
