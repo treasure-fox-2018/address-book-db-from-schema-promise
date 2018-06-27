@@ -34,32 +34,29 @@ class Controller {
     })
   }
 //
-//   static createGroup(name) {
-//     group.create(name, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully created data");
-//     });
-//   }
+  static createGroup(name) {
+    group.create(name).then(() => {
+      view.showMessage("Successfully created data");
+    })
+  }
 //
-//   static updateGroup(id, columnName, value) {
-//     group.update(id, columnName, value, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully updated data");
-//     });
-//   }
+  static updateGroup(id, columnName, value) {
+    group.update(id, columnName, value).then(() => {
+      view.showMessage("Successfully updated data");
+    })
+  }
 //
-//   static deleteGroup(id) {
-//     group.delete(id, function (err) {
-//       if (err) throw err;
-//       view.showMessage("Successfully deleted data");
-//     });
-//   }
+  static deleteGroup(id) {
+    group.delete(id).then(() => {
+      view.showMessage("Successfully deleted data");
+    })
+  }
 //
-//   static showGroups() {
-//     group.show(function (data) {
-//       view.showMessage(data);
-//     });
-//   }
+  static showGroups() {
+    group.show().then((data) => {
+      view.showMessage(data);
+    })
+  }
 //
 //   static createContactGroup(contactId, groupId) {
 //     contactGroup.create(contactId, groupId, function (err) {
